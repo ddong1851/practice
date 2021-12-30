@@ -3,7 +3,7 @@ package src.boj;
 import java.util.Scanner;
 
 //백준 1110
-public class backjun1110 {
+public class bj1110 {
 	
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
