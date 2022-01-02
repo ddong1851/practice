@@ -26,6 +26,7 @@ public class bj10815_1 {
         while(st.hasMoreTokens())
             numList.add(Integer.parseInt(st.nextToken()));
 
+        System.out.println(n+m);
         for(int i : numList){
             if(myCard.contains(i)==true){
                 System.out.print(1+" ");
