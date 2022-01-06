@@ -26,5 +26,7 @@ public class exam {
             if(i==3) break dongryul;
             System.out.println(i);
         }
+
+        
     }
 }
