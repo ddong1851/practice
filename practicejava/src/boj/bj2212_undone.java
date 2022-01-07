@@ -11,7 +11,7 @@ public class bj2212_undone {
     static StringTokenizer st;
     public static void main(String[] args) throws IOException{
         int N = Integer.parseInt(br.readLine());
-        int K = Integer.parseInt(br.readLine());
+        //int K = Integer.parseInt(br.readLine());
         int [] sensors = new int[N];
 
         st = new StringTokenizer(br.readLine());
