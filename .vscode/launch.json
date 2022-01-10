@@ -4,7 +4,13 @@
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "Launch bj1072",
+            "request": "launch",
+            "mainClass": "src.boj.bj1072",
+            "projectName": "practice_116a9c9c"
+        },
         {
             "type": "java",
             "name": "Launch Current File",
