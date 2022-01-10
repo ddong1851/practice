@@ -1,0 +1,323 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "src.boj.Main",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch asd",
+            "request": "launch",
+            "mainClass": "src.boj.asd",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1012",
+            "request": "launch",
+            "mainClass": "src.boj.bj1012",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj10162",
+            "request": "launch",
+            "mainClass": "src.boj.bj10162",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj10815",
+            "request": "launch",
+            "mainClass": "src.boj.bj10815",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj10815_1",
+            "request": "launch",
+            "mainClass": "src.boj.bj10815_1",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1110",
+            "request": "launch",
+            "mainClass": "src.boj.bj1110",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1149_undone",
+            "request": "launch",
+            "mainClass": "src.boj.bj1149_undone",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj11650",
+            "request": "launch",
+            "mainClass": "src.boj.bj11650",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj12738",
+            "request": "launch",
+            "mainClass": "src.boj.bj12738",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1283_undone",
+            "request": "launch",
+            "mainClass": "src.boj.bj1283_undone",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1427",
+            "request": "launch",
+            "mainClass": "src.boj.bj1427",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1463",
+            "request": "launch",
+            "mainClass": "src.boj.bj1463",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj15552",
+            "request": "launch",
+            "mainClass": "src.boj.bj15552",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj1748",
+            "request": "launch",
+            "mainClass": "src.boj.bj1748",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj18870",
+            "request": "launch",
+            "mainClass": "src.boj.bj18870",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj2212_undone",
+            "request": "launch",
+            "mainClass": "src.boj.bj2212_undone",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj2217",
+            "request": "launch",
+            "mainClass": "src.boj.bj2217",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj2562",
+            "request": "launch",
+            "mainClass": "src.boj.bj2562",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj2750",
+            "request": "launch",
+            "mainClass": "src.boj.bj2750",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj5585",
+            "request": "launch",
+            "mainClass": "src.boj.bj5585",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj8958",
+            "request": "launch",
+            "mainClass": "src.boj.bj8958",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bj9095",
+            "request": "launch",
+            "mainClass": "src.boj.bj9095",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch bjCat",
+            "request": "launch",
+            "mainClass": "src.boj.bjCat",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch undone10816",
+            "request": "launch",
+            "mainClass": "src.boj.undone10816",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch binary_search",
+            "request": "launch",
+            "mainClass": "src.book.binary_search",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book178",
+            "request": "launch",
+            "mainClass": "src.book.book178",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book180",
+            "request": "launch",
+            "mainClass": "src.book.book180",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book182",
+            "request": "launch",
+            "mainClass": "src.book.book182",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book197",
+            "request": "launch",
+            "mainClass": "src.book.book197",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book201",
+            "request": "launch",
+            "mainClass": "src.book.book201",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book217",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.book217",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book220",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.book220",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book223",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.book223",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch book226",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.book226",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch pibo",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.pibo",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch pibo_bottomUp",
+            "request": "launch",
+            "mainClass": "src.book.dynamic.pibo_bottomUp",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch insertion_sort",
+            "request": "launch",
+            "mainClass": "src.book.insertion_sort",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch maze",
+            "request": "launch",
+            "mainClass": "src.book.maze",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch quick_sort",
+            "request": "launch",
+            "mainClass": "src.book.quick_sort",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch selection_sort",
+            "request": "launch",
+            "mainClass": "src.book.selection_sort",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch sequential_sort",
+            "request": "launch",
+            "mainClass": "src.book.sequential_sort",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch dijkstraEx",
+            "request": "launch",
+            "mainClass": "src.book.shortest_path.dijkstraEx",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
+            "name": "Launch exam",
+            "request": "launch",
+            "mainClass": "src.prac.exam",
+            "projectName": "practice_116a9c9c"
+        }
+    ]
+}
