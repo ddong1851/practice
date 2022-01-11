@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch prac1",
+            "request": "launch",
+            "mainClass": "prac1",
+            "projectName": "practice_116a9c9c"
+        },
+        {
+            "type": "java",
             "name": "Launch dijkstraEx2",
             "request": "launch",
             "mainClass": "src.book.shortest_path.dijkstraEx2",
