@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class bj1003_undone {
     static int[] zero = new int[41]; static int[] one = new int[41];
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static public int[] d = new int[41];
