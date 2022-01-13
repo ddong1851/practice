@@ -1,0 +1,54 @@
+#header{
+    margin-left: 20px;
+    height: 50px;
+}
+#section {
+    width: auto;
+    float: left;
+    padding: 10px;
+}
+.items {
+    padding-left: 40px;
+    float: left;
+}
+.box{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 70%;
+    overflow: hidden;
+    margin-left: 20px;
+    display: block;
+}
+.minibox {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.three_sections {
+    padding-left: 10%;
+    padding-right: 10%;
+    float: left;
+    width: 80%;
+}
+.divide_three {
+    float: left;
+    padding: 10px;
+}
+li{
+    margin: 10px;
+}
+p, h1, h2,  li{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    height: 1500px;
+    padding: 50px, 100px;
+}
