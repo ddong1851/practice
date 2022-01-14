@@ -26,6 +26,7 @@
     height: 50px;
     border-radius: 70%;
     overflow: hidden;
+    float:left;
 }
 .profile {
     width: 100%;
@@ -51,4 +52,7 @@ p, h1, h2,  li{
 body {
     height: 1500px;
     padding: 50px, 100px;
+}
+ul{
+    list-style:none;
 }
