@@ -14,6 +14,7 @@ public class Main_백준_2407_조합_실버3_208ms{
         
         int n = sc.nextInt(); // 100
         int m = sc.nextInt(); // 6 
+        sc.close();
         
         BigInteger up = BigInteger.ONE;
         BigInteger down = BigInteger.ONE;
