@@ -7,7 +7,8 @@ public class bj1057 {
 	static double lim;
     public static void main(String[] args){
     	Scanner sc = new Scanner(System.in);
-    	int n = sc.nextInt(); kim = sc.nextInt(); lim = sc.nextInt();
+    	@SuppressWarnings("unused")
+		int n = sc.nextInt(); kim = sc.nextInt(); lim = sc.nextInt();
     	sc.close();
     	
     	int result=0;
