@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Main_백준_2579_계단오르기_실버3_
+ * Main_백준_2579_계단오르기_실버3_2579
  * @author HD
  *
  */
 
-public class Main {
+public class Main_백준_2579_계단오르기_실버3_2579 {
 	static int [] dp;
 	static int [] stair;
 	public static void main(String[] args) {
@@ -33,10 +33,8 @@ public class Main {
 		if(n>=2) {
 			dp[2] = stair[1] + stair[2];
 		}
-
 		// 탑다운으로 할 때 기본적으로 이렇게 호출하고,
 		System.out.println(recur(n));
-		
 	}
 	
 	/**여기에 내가 생각한 점화식을 메서드로 작성*/

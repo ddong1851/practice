@@ -6,24 +6,33 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.Arrays;
 
-public class bj2212_undone {
+// Á¤·Ä°ú ±×¸®µð¸¦ ÀÌ¿ëÇÑ ¹æ½Ä   
+/**Main_¹éÁØ_2212_¼¾¼­_°ñµå5_  ½Ã°£ Á¦ÇÑ 2ÃÊ*/
+public class Main_¹éÁØ_2212_¼¾¼­_°ñµå5_undone {
+	
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
+    
     public static void main(String[] args) throws IOException{
+    	
         int N = Integer.parseInt(br.readLine());
-        //int K = Integer.parseInt(br.readLine());
+        int K = Integer.parseInt(br.readLine());
+        
         int [] sensors = new int[N];
 
         st = new StringTokenizer(br.readLine());
         for(int i=0; i<N; i++) sensors[i] = Integer.parseInt(st.nextToken());
+        // ¼¾¼­ ¹è¿­À» Á¤·Ä
         Arrays.sort(sensors);
 
-
+        
+        //Â÷ÀÌ ¹è¿­À» ¸¸µç´Ù
         Integer diffSensors[] = new Integer[N-1];
         for(int i=0; i<N-1; i++){
             diffSensors[i] = sensors[i+1] - sensors[i];
-        }
+        } //  2 3 0 1 2
         
-        //ë­”ê°€ ì°¨ì´ë¥¼ ì´ìš©í•˜ëŠ” ë¬¸ì œì¸ ê²ƒ ê°™ì€ë°... ì–´ë–¤ ê¸°ì¤€ì„ ë‘ê³  í’€ì–´ì•¼ í• ì§€..
+        
+        
     }
 }
