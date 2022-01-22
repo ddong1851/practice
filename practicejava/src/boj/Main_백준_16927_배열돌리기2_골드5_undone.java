@@ -8,13 +8,14 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 /**
- * Main_백준_16927_골드5_undone(시간초과)
+ * Main_백준_16927_배열돌리기2_골드5_undone(시간초과)
  * 각 레이어에서의 순환을 dx dy를 이용한 이동을 통해 for 문의 개수를 줄여야 할 거 같다.
  * 이때 배열의 크기를 하나 더 크게 만들고 범위를 나갔는지 확인하지 않게 해보자.
  */
 
 /**NxM 짜리 배열을 반시계 방향으로 돌린다. 시간은 1초*/
-public class Main_백준_16927_골드5_undone {
+
+public class Main_백준_16927_배열돌리기2_골드5_undone {
 	public static void main(String[] args) throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
