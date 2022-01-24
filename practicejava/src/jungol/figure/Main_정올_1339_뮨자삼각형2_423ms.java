@@ -8,6 +8,7 @@ public class Main_정올_1339_뮨자삼각형2_423ms {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		StringBuffer sb = new StringBuffer();
 		// 상수를 입력받을 변수
 		int n = sc.nextInt();
 		if(n<=0 || n>100 || n%2==0) {
@@ -36,11 +37,12 @@ public class Main_정올_1339_뮨자삼각형2_423ms {
 		// 출력
 		for(char[] c:figure) {
 			for(char a:c) {
-				System.out.print(a+" ");
+				sb.append(a+" ");
 			}
-			System.out.println();
+			sb.append("\n");
 		}
 		
+		System.out.println(sb.toString());
 		
 		/*
 		 * 
