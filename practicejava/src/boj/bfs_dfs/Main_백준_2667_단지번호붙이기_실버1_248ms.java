@@ -7,20 +7,20 @@ import java.util.Queue;
 import java.util.Scanner;
 
 
-class Node{
-	int row;
-	int col;
-	public Node(int row, int col) {
-		this.row = row;
-		this.col = col;
-	}
-	public int getRow() {
-		return row;
-	}
-	public int getCol() {
-		return col;
-	}
-}
+//class Node{
+//	int row;
+//	int col;
+//	public Node(int row, int col) {
+//		this.row = row;
+//		this.col = col;
+//	}
+//	public int getRow() {
+//		return row;
+//	}
+//	public int getCol() {
+//		return col;
+//	}
+//}
 
 
 /** Main_백준_2667_단지번호붙이기_실버1_248ms*/
