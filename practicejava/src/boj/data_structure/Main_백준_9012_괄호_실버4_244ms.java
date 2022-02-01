@@ -3,30 +3,30 @@ package src.boj.data_structure;
 import java.util.Scanner;
 import java.util.Stack;
 
-/**Main_¹éÁØ_9012_°ıÈ£_½Ç¹ö4_244ms*/
-public class Main_¹éÁØ_9012_°ıÈ£_½Ç¹ö4_244ms {
+/**Main_ï¿½ï¿½ï¿½ï¿½_9012_ï¿½ï¿½È£_ï¿½Ç¹ï¿½4_244ms*/
+public class Main_ë°±ì¤€_9012_ê´„í˜¸_ì‹¤ë²„4_244ms {
 	
 	public static String solution(String s) {
 		Stack<Character> stack = new Stack<>();
 		
 		for (int i = 0; i < s.length(); i++) {
-			// ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ i¹øÂ° ¿ä¼Ò 
+			// ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ iï¿½ï¿½Â° ï¿½ï¿½ï¿½ 
 			char c = s.charAt(i);
 			if (c == '(') {
 				stack.push(c);
 			}
 			
-			// (°Ô ¾ø´Âµ¥ )¸¦ ¹ŞÀº °æ¿ì, 
+			// (ï¿½ï¿½ ï¿½ï¿½ï¿½Âµï¿½ )ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 
 			else if (stack.empty()) {
 				return "NO";
 			}
-			// ÀÔ·ÂÀÌ ()´Ï±î (°¡ ¾Æ´Ñ )°Ô µé¾î¿À¸é pop
+			// ï¿½Ô·ï¿½ï¿½ï¿½ ()ï¿½Ï±ï¿½ (ï¿½ï¿½ ï¿½Æ´ï¿½ )ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pop
 			else {
 				stack.pop();
 			}
 		}
 		
-		// ¹İº¹¹® ÀÌÈÄ ½ºÅÃÀÌ Â÷ÀÖ´Ù¸é NO ºñ¾ú´Ù¸é YES
+		// ï¿½İºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö´Ù¸ï¿½ NO ï¿½ï¿½ï¿½ï¿½Ù¸ï¿½ YES
 		if (stack.empty()) {
 			return "YES";
 		} 

@@ -3,8 +3,8 @@ package src.boj.data_structure;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/** Main_¹éÁØ_14425_¹®ÀÚ¿­ÁıÇÕ_½Ç¹ö3_5263ms*/
-public class Main_¹éÁØ_14425_¹®ÀÚ¿­ÁıÇÕ_½Ç¹ö3_5263ms {	
+/** Main_ï¿½ï¿½ï¿½ï¿½_14425_ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½Ç¹ï¿½3_5263ms*/
+public class Main_ë°±ì¤€_14425_ë¬¸ìì—´ì§‘í•©_ì‹¤ë²„3_5263ms {	
 	
 	public static void main(String[] args) {
 		
