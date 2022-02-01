@@ -8,10 +8,10 @@ import java.io.OutputStreamWriter;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-/** Main_백준_11279_최대힙_실버2_356ms*/
+/** Main_諛깆�_11279_理쒕��옓_�떎踰�2_356ms*/
 public class Main_백준_11279_최대힙_실버2_356ms {
 	public static void main(String[] args) throws IOException{
-		// 최대힙으로 구현
+		// 理쒕��옓�쑝濡� 援ы쁽
 		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

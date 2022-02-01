@@ -7,7 +7,7 @@ import java.util.Deque;
 import java.util.StringTokenizer;
 
 /** Main_ï¿½ï¿½ï¿½ï¿½_10845_Å¥_ï¿½Ç¹ï¿½4_196ms*/
-public class Main_ë°±ì¤€_10845_í_ì‹¤ë²„4_196ms {
+public class Main_¹éÁØ_10845_Å¥_½Ç¹ö4_196ms {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuffer sb = new StringBuffer();

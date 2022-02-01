@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-/** Main_백준_11286_절댓값힙_실버1_372ms*/
+/** Main_諛깆�_11286_�젅�뙎媛믫옓_�떎踰�1_372ms*/
 public class Main_백준_11286_절댓값힙_실버1_372ms {
 	public static void main(String[] args) throws IOException{
 		PriorityQueue<Integer> plus_pq = new PriorityQueue<Integer>();

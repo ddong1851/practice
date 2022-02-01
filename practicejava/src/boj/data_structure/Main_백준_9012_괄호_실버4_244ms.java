@@ -3,30 +3,30 @@ package src.boj.data_structure;
 import java.util.Scanner;
 import java.util.Stack;
 
-/**Main_����_9012_��ȣ_�ǹ�4_244ms*/
+/**Main_占쏙옙占쏙옙_9012_占쏙옙호_占실뱄옙4_244ms*/
 public class Main_백준_9012_괄호_실버4_244ms {
 	
 	public static String solution(String s) {
 		Stack<Character> stack = new Stack<>();
 		
 		for (int i = 0; i < s.length(); i++) {
-			// �Է��� ���ڿ��� i��° ��� 
+			// 占쌉뤄옙占쏙옙 占쏙옙占쌘울옙占쏙옙 i占쏙옙째 占쏙옙占� 
 			char c = s.charAt(i);
 			if (c == '(') {
 				stack.push(c);
 			}
 			
-			// (�� ���µ� )�� ���� ���, 
+			// (占쏙옙 占쏙옙占승듸옙 )占쏙옙 占쏙옙占쏙옙 占쏙옙占�, 
 			else if (stack.empty()) {
 				return "NO";
 			}
-			// �Է��� ()�ϱ� (�� �ƴ� )�� ������ pop
+			// 占쌉뤄옙占쏙옙 ()占싹깍옙 (占쏙옙 占싣댐옙 )占쏙옙 占쏙옙占쏙옙占쏙옙 pop
 			else {
 				stack.pop();
 			}
 		}
 		
-		// �ݺ��� ���� ������ ���ִٸ� NO ����ٸ� YES
+		// 占쌥븝옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쌍다몌옙 NO 占쏙옙占쏙옙摸占� YES
 		if (stack.empty()) {
 			return "YES";
 		} 

@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.PriorityQueue;
 
-/** Main_백준_1927_최소힙_실버2_376ms*/
+/** Main_諛깆�_1927_理쒖냼�옓_�떎踰�2_376ms*/
 public class Main_백준_1927_최소힙_실버2_376ms {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-//		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder()); 최대힙
+//		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder()); 理쒕��옓
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,7 +29,7 @@ public class Main_백준_1927_최소힙_실버2_376ms {
 				}
 				break;
 			default:
-				// add를 쓰면 내부적으로 offer를 돌린다. 그냥 offer를 쓰자!
+				// add瑜� �벐硫� �궡遺��쟻�쑝濡� offer瑜� �룎由곕떎. 洹몃깷 offer瑜� �벐�옄!
 				pq.offer(num); 
 				break;
 			}
