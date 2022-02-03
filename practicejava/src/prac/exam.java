@@ -1,32 +1,62 @@
 package src.prac;
 
-public class exam {
-    public static void main(String[] args) {
-        int a = 3; //11
-        int b = 1; //01
+import java.util.Scanner;
 
-        System.out.println("ANDì—°ì‚°");
-        System.out.println(a&b);
-        System.out.println("ORì—°ì‚°");
-        System.out.println(a|b);
-        System.out.println("XORì—°ì‚°");
-        System.out.println(a^b);
-        System.out.println("NOTì—°ì‚°, aì™€ ë”í–ˆì„ ë•Œ -1ì´ ë˜ê²Œ í•˜ëŠ” ìˆ˜");
-        System.out.println(~a);
-        System.out.println("a << 1, ìš°ì¸¡ì— 0ì„ í•˜ë‚˜ ì¶”ê°€í•˜ê³ , ì™¼ìª½ ëì„ í•˜ë‚˜ ì œê±° 11->110 ë˜ê²Œí•¨");
-        System.out.println(a << 1);
-        System.out.println("a >> 1, ì¢Œì¸¡ì— 0ì„ í•˜ë‚˜ ì¶”ê°€í•˜ê³ , ìš°ì¸¡ ëì„ í•˜ë‚˜ ì œê±° 11->01 ë˜ê²Œí•¨");
-        System.out.println(a >> 1);
+class Parent {
+	int a;
+	int b;
+	public Parent(int a, int b) {
+		super();
+		this.a = a;
+		this.b = b;
+	}
+	public int getA() {
+		System.out.println(a);
+		// ÀÌ °æ¿ì´Â Àç±Í¿¡ ºüÁö°Ô µÇ¾î º»ÀÎÀÇ aÀÎ 1¸¸ Ãâ·ÂÇÏ´Ù°¡ ³¡³­´Ù --> ·±Å¸ÀÔ ¿¡·¯°¡ µÈ´Ù.
+//		this.getA();
+		return a;
+	}
+	public void setA(int a) {
+		this.a = a;
+	}
+	public int getB() {
+		return b;
+	}
+	public void setB(int b) {
+		this.b = b;
+	}
+}
 
-        System.out.println("ë¹„íŠ¸ì—°ì‚°ìëŠ” í”¼ì—°ì‚°ì<<ì´ë™í• ë¹„íŠ¸ìˆ˜ a<<2ëŠ” 2ì¹¸ ì¦ê°€ 11->1100");
-        System.out.println(a<<2);
+public class exam extends Parent{
+    public exam(int a, int b) {
+		super(a, b);
+	}
+    
+    public exam() {
+    	super(1, 2);
+    }
+    
+    public int getA() {
+    	super.getA();
+		return 100;
+    }
 
-        System.out.println("Label ì‚¬ìš©ë²•");
-        dongryul : for(int i=0; i<5; i++){
-            if(i==3) break dongryul;
-            System.out.println(i);
-        }
+	public static void main(String[] args) {
+  
+    	Scanner sc = new Scanner(System.in);
+    	int n =sc.nextInt();
+    	switch(n) {
+    	case 1:
+    		break;
+    		
+    	}
+    	for (int i = 0; i < args.length; i++) {
+			String string = args[i];
+		}
 
-        
+        Parent p = new exam();
+        System.out.println(p.getB());
+        System.out.println(p.getA());
+        System.out.println();
     }
 }
