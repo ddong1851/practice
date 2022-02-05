@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.dp;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
