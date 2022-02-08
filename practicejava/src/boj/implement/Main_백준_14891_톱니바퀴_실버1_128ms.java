@@ -9,6 +9,7 @@ public class Main_백준_14891_톱니바퀴_실버1_128ms {
 	
 	static String[] chains;
 	static boolean[] rotated;
+	
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -31,11 +32,13 @@ public class Main_백준_14891_톱니바퀴_실버1_128ms {
 			rotate(chain, dir, true, 0);
 		}
 		
+		
 		// 점수의 총합 구하고 출력
 		int count = 0;
 		for(int i=0; i<4; i++) {
 			count+=calc(i);
 		}
+		
 		System.out.println(count);
 	} // end of main
 
@@ -77,9 +80,6 @@ public class Main_백준_14891_톱니바퀴_실버1_128ms {
 					right = true;
 				}
 			}
-			// 회전 지시
-			rotated[ch] = true;
-			changeString(ch, dir);
 		} // end of first Rotation
 		
 		// 파생된 회전이라면
@@ -90,17 +90,19 @@ public class Main_백준_14891_톱니바퀴_실버1_128ms {
 				if(ch <= 2 && chains[ch].charAt(2)!=chains[ch+1].charAt(6)) {
 					right = true;
 				}
-				changeString(ch, dir);
-				rotated[ch] = true;
 			}
 			else {
 				if(ch >= 1 && chains[ch].charAt(6)!=chains[ch-1].charAt(2)) {
 					left = true;
 				}
-				changeString(ch, dir);
-				rotated[ch] = true;
 			}
 		} // end of Rotation
+		
+		// 회전 지시
+		changeString(ch, dir);
+		rotated[ch] = true;
+		
+		// 좌우 회전
 		if(right) {
 			rotate(chain+1, dir*-1, false, 1);
 		}

@@ -12,6 +12,15 @@ public class Main_백준_1543_문서검색_실버4_김동률_136ms {
 		char[] str2 = br.readLine().toCharArray();
 		int row = str2.length;
 		int col = str1.length;
+		/*
+		 *  ababababab
+		 * b0101010101 
+		 * a102 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
 		// 최장 공통 부분문자열 문제로 해결해보자
 		int[][] LCS = new int [row+1][col+1];
 		int count = 0;
