@@ -26,7 +26,7 @@ public class Main_백준_1167_트리의지름_골드3_796ms {
 	
 	static boolean[] visited;
 	// Node들을 어떠한 정점에 연결할 때 사용하는 방법
-	static ArrayList<NodeV>[] graph;
+	static ArrayList<NodeV>[] graph; // 어레이 리스트의 배열을 만든다.
 	static int max = 0;
 	static int node;
 	
@@ -64,10 +64,12 @@ public class Main_백준_1167_트리의지름_골드3_796ms {
 		
 		// 정점과 정점 기준 가장 먼 정점을 찾는다
 //		DFS()
+		// 임의의 정점 1에서부터 가장 먼 노드를 탐색한다.
 		visited = new boolean[V+1];
 		DFS(1, 0);
 		
 //		가장 먼 노드에서의 거리 
+		// 가장 먼 노드에서부터 다시 탐색한다
 		visited = new boolean[V+1];
 		DFS(node, 0);
 		
@@ -75,6 +77,7 @@ public class Main_백준_1167_트리의지름_골드3_796ms {
 	}
 	
 	private static void DFS(int x, int distance) {
+		// 총 거리가 최대 거리보다 더 먼 경우 갱신
 		 if(distance > max) {
 			 max = distance;
 			 node = x;
