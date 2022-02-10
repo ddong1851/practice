@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 // 시간 초과
 /** Main_백준_1406_에디터_실버3_716ms*/
 public class Main_백준_1406_에디터_실버3_716ms {
+	
 	static int n;
 	static List<Character> list;
 	public static void main(String[] args) throws Exception{

@@ -37,6 +37,8 @@ class PrinterQ implements Comparable<PrinterQ>{
 	}
 }
 
+
+
 /** 1966 프린터큐*/
 public class Main_백준_1966_프린터큐_실버3_148ms {
 	public static void main(String[] args) throws Exception{
@@ -55,7 +57,8 @@ public class Main_백준_1966_프린터큐_실버3_148ms {
 			int n = Integer.parseInt(st.nextToken());
 			int target = Integer.parseInt(st.nextToken());
 			
-			
+			// 배열을 역순 정렬하려고 사용했는데, 그냥 우선순위큐를 이용하면 되었다.
+			// + 우선순위큐를 이용하는 스킬 중에 하나는, 양수의 값만 들어온다는 
 			Integer[] score = new Integer[n];
 			Queue<Integer> q = new LinkedList<Integer>();
 			Queue<Integer> result = new LinkedList<Integer>();
@@ -76,7 +79,8 @@ public class Main_백준_1966_프린터큐_실버3_148ms {
 				if(oriScore[curr]<score[idx]) {
 					q.offer(curr);
 				}
-				else if(oriScore[curr]==score[idx]) {
+				// Integer니까 equals로 사용하는게 좋다.
+				else if(oriScore[curr].equals(score[idx])) {
 					result.offer(curr);
 					idx++;
 				}

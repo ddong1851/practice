@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-
 public class Main_백준_17298_오큰수_골드4_1016ms {
 	
 	// 오큰수와 숫자를 저장할 배열

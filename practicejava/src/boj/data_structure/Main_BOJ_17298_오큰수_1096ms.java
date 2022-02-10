@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-
 /*
  * 큐에 각 인덱스마다 갖는 값들을 Pair라는 데이터타입에 넣고 저장
  * 스택에는 오큰수를 찾아야하는 인덱스들을 Pair 타입으로 쌓기
@@ -12,7 +11,7 @@ import java.util.*;
  * 
  * 오큰수 문제
  * 탑 문제와 유사( 사실상 얘가 좌큰수 )
- * 우측에 자신보다 큰 값이 오면 오큰수를 찾았으므로 이므로 스택에서 빠진다
+ * 우측에 자신보다 큰 값이 오면 오큰수를 찾았으므로 스택에서 빠진다
  * 자신보다 작은 값이 들어오면 오큰수를 찾기 위해 스택에 쌓는다. 
  * 오큰수가 없다면 해당 값을 -1로 지정해라
  * 
@@ -26,6 +25,7 @@ import java.util.*;
  * 
  * + 조건을 넣으면 while문 처리가 더 이쁠거 같다(기독성?)
  */
+
 
 public class Main_BOJ_17298_오큰수_1096ms {
     
