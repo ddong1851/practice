@@ -62,6 +62,7 @@ public class Main_백준_7569_토마토_골드5_748ms {
 				}
 			}
 		}
+		
 		if(zeros==0) {
 			System.out.println(0);
 			System.exit(0);
