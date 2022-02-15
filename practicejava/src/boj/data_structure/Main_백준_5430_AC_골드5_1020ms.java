@@ -87,7 +87,6 @@ public class Main_πÈ¡ÿ_5430_AC_∞ÒµÂ5_1020ms {
 		System.out.println(result.toString());
 		
 	} // end of main
-
 	
 	private static void Delete() {
 		if(FB==1) {
@@ -104,18 +103,4 @@ public class Main_πÈ¡ÿ_5430_AC_∞ÒµÂ5_1020ms {
 	} // end of Delete Method
 	
 } // end of Main
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

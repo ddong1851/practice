@@ -25,6 +25,7 @@ public class Main_πÈ¡ÿ_5430_AC_∞ÒµÂ5_916ms {
 		if(tail<0 || (AC[head]==0 && AC[tail]==0)) {
 			flag = false;
 		} // check end of array
+		
 		else if(reversed) {
 			if(AC[tail-1]==0){
 				flag = false;
@@ -44,6 +45,7 @@ public class Main_πÈ¡ÿ_5430_AC_∞ÒµÂ5_916ms {
 		} // end of not reversed 
 	}
 	
+	
 	private static void R() {
 		// head ∫Œ≈Õ ª©±‚ & √‚∑¬
 		if(reversed) {
@@ -54,6 +56,7 @@ public class Main_πÈ¡ÿ_5430_AC_∞ÒµÂ5_916ms {
 			reversed = true;
 		}
 	}
+	
 	
 	private static void ACString() {
 		if(flag) {

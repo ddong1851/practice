@@ -67,7 +67,6 @@ public class Main_백준_5639_이진검색트리_골드5_444ms {
 		if(root==null) return;
 		PostPrintTree(root.left);
 		PostPrintTree(root.right);
-		
 		sb.append(root.val).append("\n");
 	}
 

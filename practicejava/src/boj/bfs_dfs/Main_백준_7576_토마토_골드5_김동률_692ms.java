@@ -65,7 +65,6 @@ public class Main_백준_7576_토마토_골드5_김동률_692ms {
 		System.out.println(result);
 		
 	} // end of main
-
 	
 	// 너비 우선 탐색 메서드
 	private static int BFS() {

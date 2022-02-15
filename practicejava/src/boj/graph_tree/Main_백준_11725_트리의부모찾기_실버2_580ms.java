@@ -38,6 +38,7 @@ public class Main_백준_11725_트리의부모찾기_실버2_580ms {
 		 * 
 		 */
 		
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
@@ -67,6 +68,7 @@ public class Main_백준_11725_트리의부모찾기_실버2_580ms {
 		System.out.println(sb.toString());
 		
 	} // end of main
+	
 
 	// 부모를 찾는 메서드 -> 깊이우선으로 루트 노드인 1부터 탐색한다.
 	private static void findParent(int start) {
