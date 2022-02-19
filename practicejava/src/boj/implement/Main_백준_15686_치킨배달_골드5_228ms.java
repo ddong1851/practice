@@ -1,4 +1,4 @@
-package src.boj.undone;
+package src.boj.implement;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /** Main_백준_15686_치킨배달_골드5_시간초과*/
-public class Main_백준_15686_치킨배달_골드5_시간초과 {
+public class Main_백준_15686_치킨배달_골드5_228ms {
 	
 	private static class Node{
 		public int row;
@@ -57,6 +57,7 @@ public class Main_백준_15686_치킨배달_골드5_시간초과 {
 		 * 
 		 * 메모이제이션 활용해야 함
 		 * 치킨집 1을 선택했을 때의 치킨 거리 저장 .... 
+		 * + 
 		 * 
 		 */
 		
@@ -76,39 +77,41 @@ public class Main_백준_15686_치킨배달_골드5_시간초과 {
 			}
 		}
 		
+		int housesize = houses.size();
+		int chickensize = chickens.size();
 		// 여기서 먼저 모든 치킨 거리를 다 계산하자
-		// 도시의 개수는 모르고, 치킨집의 개수는 최대 13개 -> 각 치킨집 별 모든 가구의 거리 계산 -> 자료구조는 ArrayList<int[] or ArrayList> 
-		memoDistance = new ArrayList[chickens.size()];
-		for(int i=0; i<memoDistance.length; i++) {
-			memoDistance[i] = new ArrayList<Integer>(houses.size());
+		// 도시의 개수는 모르고, 치킨집의 개수는 최대 13개  --> 모든 가구들이 각 치킨집까지의 거리를 미리 계산
+		memoDistance = new ArrayList[housesize];
+		for(int i=0; i<housesize; i++) {
+			memoDistance[i] = new ArrayList<Integer>(chickensize);
 		}
 		
 		// 모든 거리 미리 합산
-		for(int i=0; i<memoDistance.length; i++) {
-			for(int j=0; j<houses.size(); j++) {
-				memoDistance[i].add(Math.abs(chickens.get(i).row - houses.get(j).row) + Math.abs(chickens.get(i).col - houses.get(j).col));
+		for(int i=0; i<housesize; i++) {
+			for(int j=0; j<chickensize; j++) {
+				memoDistance[i].add(Math.abs(houses.get(i).row - chickens.get(j).row) + Math.abs(houses.get(i).col - chickens.get(j).col));
 			}
 		} // end of Memorization
 		
 		min = 1_000_000;
-		pickChicken = new boolean[chickens.size()];
-		SelectChickens(0);
+		pickChicken = new boolean[chickensize];
+		SelectChickens(0, 0);
 		
 		System.out.println(min);
 	} // end of main
 
-	private static void SelectChickens(int picked) {
+	private static void SelectChickens(int picked, int start) {
 		// M개를 뽑았을 때
 		if(picked==M) {
 			min = Math.min(min, ChickenDistance());
 			return;
 		}
-		
-		for(int i=0; i<chickens.size(); i++) {
+		// start부터 조회해야 필요없는 조회를 하지 않는다
+		for(int i=start; i<chickens.size(); i++) {
 			// 치킨집 선택
 			if(pickChicken[i]) continue;
 			pickChicken[i] = true;
-			SelectChickens(picked+1);
+			SelectChickens(picked+1, i+1);
 			// 치킨집 미선택
 			pickChicken[i] = false;
 		}
@@ -116,20 +119,20 @@ public class Main_백준_15686_치킨배달_골드5_시간초과 {
 	} // end of SelcetChickens
 	
 	private static int ChickenDistance() {
-		
-		houseDistance = new int[houses.size()];
+		int housesize = houses.size();
+		houseDistance = new int[housesize];
 		Arrays.fill(houseDistance, 1_000_000);
 		for(int i=0; i<chickens.size(); i++) {
 			// 선택한 치킨집 
 			if(pickChicken[i]) {
-				for(int j=0; j<houses.size(); j++) {
-					houseDistance[j] = Math.min(houseDistance[j], memoDistance[i].get(j));
+				for(int j=0; j<housesize; j++) {
+					houseDistance[j] = Math.min(houseDistance[j], memoDistance[j].get(i));
 				} // end of distance
 			} // end of picked true
 		} // end of for
 		
 		int total = 0;
-		for(int i=0; i<houses.size(); i++) {
+		for(int i=0; i<housesize; i++) {
 			total+=houseDistance[i];
 		}
 		return total;
