@@ -29,9 +29,8 @@ public class Main_백준_1052_물병_실버1_732ms {
 			cnt++;
 		}
 		System.out.println(cnt);
-		
 	} // end of main
-
+	
 	private static boolean CountOnes(int n) {
 		// TODO Auto-generated method stub
 		String binary = Integer.toBinaryString(n);
@@ -44,4 +43,5 @@ public class Main_백준_1052_물병_실버1_732ms {
 		if(cnt<=K) return true;
 		return false;
 	}
+	
 } // end of Main

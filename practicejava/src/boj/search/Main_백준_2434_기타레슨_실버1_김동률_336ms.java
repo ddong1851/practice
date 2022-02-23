@@ -35,7 +35,6 @@ public class Main_백준_2434_기타레슨_실버1_김동률_336ms {
 		// count <= M 이면 high를 mid-1로 설정하고 다시
 		// count >M 이면 low를 mid+1로 설정하고 다시
 		
-		
 		int high = max;
 		int mid = 0;
 		while(low<=high) {
@@ -51,8 +50,6 @@ public class Main_백준_2434_기타레슨_실버1_김동률_336ms {
 		// 디버깅 하다보니 low가 답이네요..
 		// 제가 이해한 바로 최소 개수인 M개를 사용하는 블루레이 크기 중 최소값을 구하는 거라 low를 사용하는거 같아요
 		System.out.println(low);
-		
-		
 	} // end of main
 	
 	private static boolean count(int mid) {
