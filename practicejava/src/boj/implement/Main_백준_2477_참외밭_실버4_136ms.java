@@ -9,7 +9,6 @@ public class Main_백준_2477_참외밭_실버4_136ms{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		
-		
 		int K = Integer.parseInt(br.readLine());
 		int maxR = 0;
 		int maxC = 0;
