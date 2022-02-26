@@ -2,17 +2,27 @@ package src.boj.bruteforce;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
-
-/** Main_백준_12100_2048easy_골드2_*/
-public class Main {
+/** 데크로 구현*/
+public class Main_백준_12100_2048easy_골드2_428ms {
+	
+	private static class easy{
+		int V;
+		boolean changed;
+		public easy(int v, boolean changed) {
+			super();
+			V = v;
+			this.changed = changed;
+		}
+	}
 	
 	private static int N;
 	private static int[][] map;
-	private static int total, addedTop;
-	private static Stack<Integer> stack;
+	private static int total;
+	private static Deque<easy> dq;
 	
 	private static void makeOper(int cnt, int[] oper) {
 		if(cnt==5) {
@@ -21,14 +31,12 @@ public class Main {
 			for(int i=0; i<N; i++) cmap[i] = map[i].clone();
 			// 5번의 오버레이션 
 			for(int i=0; i<5; i++) {
-//				moveBlock(oper[i], cmap);
-				moveBlock(0, cmap);
+				moveBlock(oper[i], cmap);
 			}
 			// 최대값 찾기
 			findmax(cmap);
 			return;
 		}
-		
 		for(int i=0; i<4; i++) {
 			oper[cnt] = i;
 			makeOper(cnt+1, oper);
@@ -52,26 +60,18 @@ public class Main {
 		}
 		// 0이 아니라면
 		else {
-			// 스택이 비어있다면
-			if(stack.isEmpty()) stack.push(cmap[row][col]);
+			// 데크가 비어있다면
+			if(dq.isEmpty()) dq.offer(new easy(cmap[row][col], false));
 			else {
-				// 스택에 들어와있는 값이랑 다른 값이면 그냥 추가
-				if(cmap[row][col]!=stack.peek()) stack.push(cmap[row][col]);
-				// 같은 값이 들어왔을 때
+				// 데크 맨 끝에 있는 값과 동일하며, 그 값이 변경된 값이 아니라면
+				if(cmap[row][col]==dq.peekLast().V && !dq.peekLast().changed) {
+					// 그 값의 2배짜리를 변경된 상태로 넣는다.
+					int temp = dq.pollLast().V*2;
+					dq.offer(new easy(temp, true));
+				}
+				// 데크에 있는 값과 다르거나, 동일한 값인데 이미 변경된적 있는 값이라면
 				else {
-					// 스택에 있는 값이 이전에 더한 값이라면
-					if(addedTop==stack.peek()) {
-						stack.push(cmap[row][col]);
-						// 초기화
-						addedTop = 0;
-					}
-					// 합치기
-					else {
-						int temp = stack.pop()*2;
-						stack.push(temp);
-						addedTop = temp;
-					}
-					
+					dq.offer(new easy(cmap[row][col], false));
 				} // end of else cmap == stack.peek
 			} // end of else !stack.isEmpty
 			// 해당 자리 비워주기
@@ -81,58 +81,56 @@ public class Main {
 
 	// 이동 지시
 	private static void moveBlock(int oper, int[][] cmap) {
-		// 데이터를 쌓을 스택
-		stack = new Stack<Integer>();
-		addedTop = 0;
+		// 데이터를 넣을 데크
+		dq = new ArrayDeque<easy>();
 		switch(oper) {
 		case 0: // 전부 올리기
 			// 맨 아래 열의 시작부터 
 			for(int col=0; col<N; col++) {
-				for(int row=N-1; row>=0; row--) {
+				for(int row=0; row<N; row++) {
 					realMove(row, col, cmap);
 				} // end of for rows 
 				// 맨 위까지 올라왔을 때
 				int r = 0;
-				while(!stack.isEmpty()) {
-					cmap[r++][col] = stack.pop();
+				while(!dq.isEmpty()) {
+					cmap[r++][col] = dq.poll().V;
 				}
-				addedTop=0;
 			} // end of for cols
 			break;
+			
 		case 1: // 전부 내리기
 			for(int col=0; col<N; col++) {
-				for(int row=0; row<N; row++) {
+				for(int row=N-1; row>=0; row--) {
 					realMove(row, col, cmap);
 				} // end of for rows 
 				int r = N-1;
-				while(!stack.isEmpty()) {
-					cmap[r--][col] = stack.pop();
+				while(!dq.isEmpty()) {
+					cmap[r--][col] = dq.poll().V;
 				}
-				addedTop=0;
 			}
 			break;
+			
 		case 2: // 전부 왼쪽으로
-			for(int row=0; row<N; row++) {
-				for(int col=N-1; col>=0; col--) {
-					realMove(row, col, cmap);
-				} // end of for rows 
-				int c = 0;
-				while(!stack.isEmpty()) {
-					cmap[row][c++] = stack.pop();
-				}
-				addedTop=0;
-			} // end of for cols
-			break;
-		case 3: // 전부 오른쪽으로
 			for(int row=0; row<N; row++) {
 				for(int col=0; col<N; col++) {
 					realMove(row, col, cmap);
 				} // end of for rows 
-				int c = N-1;
-				while(!stack.isEmpty()) {
-					cmap[row][c--] = stack.pop();
+				int c = 0;
+				while(!dq.isEmpty()) {
+					cmap[row][c++] = dq.poll().V;
 				}
-				addedTop=0;
+			} // end of for cols
+			break;
+			
+		case 3: // 전부 오른쪽으로
+			for(int row=0; row<N; row++) {
+				for(int col=N-1; col>=0; col--) {
+					realMove(row, col, cmap);
+				} // end of for rows 
+				int c = N-1;
+				while(!dq.isEmpty()) {
+					cmap[row][c--] = dq.poll().V;
+				}
 			} // end of for cols
 			break;
 		default: break;
@@ -174,21 +172,4 @@ public class Main {
 		System.out.println(total);
 		
 	} // end of main 
-
-} // end of class 
-
-// --> 2048
-//3
-//0 8 1024
-//4 0 4
-//0 1024 32
-
-//5
-//2 0 0 0 0
-//2 0 0 0 0
-//4 0 0 0 0
-//2 0 0 0 0
-//2 0 0 0 0
-
-
-
+}
