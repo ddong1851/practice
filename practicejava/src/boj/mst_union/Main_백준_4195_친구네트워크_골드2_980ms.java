@@ -33,6 +33,7 @@ public class Main_백준_4195_친구네트워크_골드2_980ms {
 		depths[root1] = depths[root1] + depths[root2];
 		// depths 초기화, 필요한가? 현재 root2는 다시는 쓰이지 않을 자리
 //		depths[root2] = 1;
+		// return depths[root1] 이걸로 하는게 어땠을까
 	}
 
 	// 부모 찾으면서 갱신

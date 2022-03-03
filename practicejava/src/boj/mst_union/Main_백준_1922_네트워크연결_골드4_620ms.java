@@ -45,7 +45,6 @@ public class Main_백준_1922_네트워크연결_골드4_620ms {
 		p[root2] = root1;
 		return true;
 	}
-
 	
 	public static void main(String[] args) throws Exception{
 		
