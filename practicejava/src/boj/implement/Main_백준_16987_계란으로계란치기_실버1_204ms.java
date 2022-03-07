@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/** Main_백준_16987_계란으로계란치기_실버1_220ms*/
-public class Main_백준_16987_계란으로계란치기_실버1_220ms {
+/** Main_백준_16987_계란으로계란치기_실버1_204ms*/
+public class Main_백준_16987_계란으로계란치기_실버1_204ms {
 	
 	private static int N, total;
 	private static int[] durability;
@@ -33,7 +33,7 @@ public class Main_백준_16987_계란으로계란치기_실버1_220ms {
 		
 		// 초기화 세션
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		N = Integer.parseInt(br.readLine());
+		N = Integer.parseInt(br.readLine()); // 1 <= N <= 8 
 		durability = new int[N];
 		weight = new int[N];
 		for (int i = 0; i < N; i++) {
@@ -55,16 +55,17 @@ public class Main_백준_16987_계란으로계란치기_실버1_220ms {
 			total = Math.max(total, broken);
 			return;
 		}
-		// 들고 있는 계란이 깨진 계란이면 + 아래에서 이미 깨진 계란으로 합산 함
-		if(durability[picked]<=0) {
-			go(picked+1, broken);
-			return;
-		}
 		// 반복문
 		for(int i=0; i<N; i++) {
 			// 지금 손에 쥔 계란이라면
 			if(picked==i) continue;
-			// 이미 깨진 계란이라면
+			// 들고 있는 계란이 깨진 계란이면 + 아래에서 이미 깨진 계란으로 합산 함
+			if(durability[picked]<=0) {
+				// 다음 계란
+				go(picked+1, broken);
+				return;
+			}
+			// 대상 계란이 이미 깨진 계란이라면
 			if(durability[i]<=0) continue;
 			int breakEggs = 0;
 			// 계란으로 계란깨기
