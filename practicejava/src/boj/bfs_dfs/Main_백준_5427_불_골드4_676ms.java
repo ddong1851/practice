@@ -59,7 +59,7 @@ public class Main_백준_5427_불_골드4_676ms {
 				Node curr = q.poll();
 				int row = curr.row;
 				int col = curr.col;
-				// 해당 좌표가 불에 탄 지점이라면
+				// 해당 좌표가 불에 탄 지점이라면 
 				if(map[row][col]=='*') continue;
 				for(int i=0; i<4; i++) {
 					int nr = row + dr[i];

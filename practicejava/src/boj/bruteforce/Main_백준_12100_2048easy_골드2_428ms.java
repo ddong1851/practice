@@ -52,7 +52,7 @@ public class Main_백준_12100_2048easy_골드2_428ms {
 		}
 		total = Math.max(total, max);
 	}
-
+	
 	// 배열 이동
 	private static void realMove(int row, int col, int[][] cmap) {
 		if(cmap[row][col]==0) {
@@ -85,7 +85,7 @@ public class Main_백준_12100_2048easy_골드2_428ms {
 		dq = new ArrayDeque<easy>();
 		switch(oper) {
 		case 0: // 전부 올리기
-			// 맨 아래 열의 시작부터 
+			// 맨 위 열의 시작부터 
 			for(int col=0; col<N; col++) {
 				for(int row=0; row<N; row++) {
 					realMove(row, col, cmap);
