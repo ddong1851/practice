@@ -196,7 +196,7 @@ public class Main_백준_17472_다리만들기2_골드2_128ms {
 				}
 			} // end of for
 		} // end of while same land
-	}
+	} // 
 	
 	
 } // end of class
