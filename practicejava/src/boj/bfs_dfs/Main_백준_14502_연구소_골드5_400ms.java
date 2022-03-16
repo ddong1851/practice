@@ -72,24 +72,24 @@ public class Main_백준_14502_연구소_골드5_400ms {
 		System.out.println(max);
 	}
 	
-	/* 재귀적으로, 순열을 사용하여 벽을 배치하는 방법*/
-	private static void permWalls(int cnt) {
-		if(cnt==3) {
-			// 실행 BFS()
-		}
-		
-		for(int i=1; i<=N+1; i++) {
-			for(int j=1; j<=M+1; j++) {
-				if(lab[i][j]==0) {
-					// 벽 세우고
-					lab[i][j] = 1;
-					permWalls(cnt+1);
-					// 벽 없애고 반복
-					lab[i][j] = 0;
-				}
-			}
-		}
-	} // end of permWalls 
+//	/* 재귀적으로, 순열을 사용하여 벽을 배치하는 방법*/
+//	private static void permWalls(int cnt) {
+//		if(cnt==3) {
+//			// 실행 BFS()
+//		}
+//		
+//		for(int i=1; i<=N+1; i++) {
+//			for(int j=1; j<=M+1; j++) {
+//				if(lab[i][j]==0) {
+//					// 벽 세우고
+//					lab[i][j] = 1;
+//					permWalls(cnt+1);
+//					// 벽 없애고 반복
+//					lab[i][j] = 0;
+//				}
+//			}
+//		}
+//	} // end of permWalls 
 
 	private static void BFS(int wall1, int wall2, int wall3) {
 		

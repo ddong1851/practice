@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.bfs_dfs;
 
 import java.io.*;
 import java.util.*;
