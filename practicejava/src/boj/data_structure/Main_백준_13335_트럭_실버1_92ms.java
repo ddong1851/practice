@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /** Main_백준_13335_트럭_실버1_148ms*/
-public class Main_백준_13335_트럭_실버1_148ms {
+public class Main_백준_13335_트럭_실버1_92ms {
 	
 	private static class Truck{
 		int weight, time;

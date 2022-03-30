@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 /** Main_백준_15684_사다리조작_골드4_1536ms*/
 public class Main_백준_15684_사다리조작_골드4_1536ms {
 	
-	private static int N, M, H, row, col;
+	private static int N, M, H, row, col, ori, size;
 	private static int[][] map;
 	
 	public static void main(String[] args) throws Exception{
@@ -41,11 +41,13 @@ public class Main_백준_15684_사다리조작_골드4_1536ms {
 		 * 0번째, 첫줄, M번째 요소를 제외 나머지 정리
 		 */
 		
-		N = Integer.parseInt(st.nextToken()); // 세로줄의 수 col 
+		N = Integer.parseInt(st.nextToken())+1; // 세로줄의 수 col 
 		H = Integer.parseInt(st.nextToken()); // 가로선의 개수 
-		M = Integer.parseInt(st.nextToken()); // 가로줄의 수 row
+		M = Integer.parseInt(st.nextToken())+1; // 가로줄의 수 row
+		ori = N-1;
+		size = (M)*(N);
 		
-		map = new int[M+1][N+1];
+		map = new int[M][N];
 		int n1, n2;
 		// 가로선의 정보
 		for(int i=0; i<H; i++) {
@@ -64,7 +66,7 @@ public class Main_백준_15684_사다리조작_골드4_1536ms {
 		
 		// 1~3개 선택
 		for(int i=1; i<=3; i++) {
-			go(i, 0); // 선택할 개수, 선택된 개수
+			go(i, 0, N); // 선택할 개수, 선택된 개수
 		}
 		
 		// 불가
@@ -72,7 +74,7 @@ public class Main_백준_15684_사다리조작_골드4_1536ms {
 		
 	} // end of main 
 	
-	private static void go(int cnt, int picked) {
+	private static void go(int cnt, int picked, int start) {
 		if(cnt==picked) {
 			// 탐색
 			if(checkLadder()) {
@@ -83,30 +85,24 @@ public class Main_백준_15684_사다리조작_골드4_1536ms {
 			// 실패하면 그냥 return 
 			return;
 		} // 기저조건
-		
-		// 1차원 배열로 만들었으면 int start를 들고 다니면서 탐색을 start부터 하여 시간을 줄일 수 있을 것 같다. 하지만, 예외 처리가 좀 번거러워져서 그렇게 안했다.
-		for(int r=1; r<=M ; r++) {
-			for(int c=1; c<N; c++) {
-				// 설치할 수 있는 위치라면
-				if(map[r][c]==0 && map[r][c+1]==0) {
-					// 1. 사다리 설치
-					map[r][c] = 1;
-					map[r][c+1] = 2;
-					// 2. 다음 위치 탐색
-					go(cnt, picked+1);
-					// 3. 사다리 반납
-					map[r][c] = map[r][c+1] = 0;
-				}
-			} // end of for col 
-		} // end of for row
+		for(int i=start; i<size; i++) {
+			if(i%N==0 || i%N==ori) continue;
+			row = i/M; col = i%N;
+			if(map[row][col]==0 && map[row][col+1]==0) {
+				map[row][col]=1;
+				map[row][col+1]=2;
+				go(cnt, picked+1, i+1);
+				map[row][col] = map[row][col+1] = 0;
+			}
+		}
 		
 	} // end of go
 	
 	private static boolean checkLadder() {
 		// i번째가 i번째에서 종료하는지 확인
-		for(int i=1; i<=N; i++) {
+		for(int i=1; i<N; i++) {
 			row = 1; col = i;
-			while(row<=M) {
+			while(row<M) {
 				if(map[row][col]==1) col+=1;
 				else if(map[row][col]==2) col-=1;
 				row++;

@@ -21,13 +21,13 @@ public class Main_백준_1052_물병_실버1_732ms {
 		 * 
 		 * 비트마스킹을 쓰고싶은데, 못쓰겠어요,,, 
 		 */
-		
 		int cnt=0;
 		while(!CountOnes(N)) {
 			// 이진수로 만들기
 			N++;
 			cnt++;
 		}
+		sc.close();
 		System.out.println(cnt);
 	} // end of main
 	

@@ -18,6 +18,8 @@ public class Main_¹éÁØ_13913_¼û¹Ù²ÀÁú4_°ñµå4_388ms {
 		
 		int N = sc.nextInt();
 		K = sc.nextInt();
+		sc.close();
+		
 		if(N==K) {
 			System.out.println(0);
 			System.out.println(N);
@@ -27,7 +29,6 @@ public class Main_¹éÁØ_13913_¼û¹Ù²ÀÁú4_°ñµå4_388ms {
 			// BFS Å½»ö
 			go(N);
 		}
-		
 	} // end of main
 
 	private static void go(int n) {
