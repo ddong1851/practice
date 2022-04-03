@@ -2,11 +2,7 @@ package src.boj.dp;
 
 import java.util.Scanner;
 
-/**
- * Main_백준_1149_RGB거리_실버1_292ms
- * @author HD
- *
- */
+/**Main_백준_1149_RGB거리_실버1_292ms*/
 public class Main_백준_1149_RGB거리_실버1_292ms {
 	
 	public static void main(String[] args) {

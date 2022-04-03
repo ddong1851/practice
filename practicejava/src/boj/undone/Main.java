@@ -1,4 +1,4 @@
-package src.boj;
+package src.boj.undone;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
