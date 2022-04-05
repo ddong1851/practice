@@ -29,8 +29,8 @@ public class Solution_SWEA_5656_벽돌깨기_335ms {
 		/*
 		 * 연쇄..
 		 * 첫번째로 구슬에 닿은 곳을 터트리면서
-		 * 연쇄되며 터지는 곳들을 리스트에 추가
-		 * 큐에서 빼면서 동시에 연쇄 처리
+		 * 연쇄되면 터질 구슬들 추가 하면서 연쇄 ...
+		 * 큐가 빌때까지 반보 
 		 * 
 		 * 포인트
 		 * 연쇄할 포인트 지정
@@ -48,7 +48,6 @@ public class Solution_SWEA_5656_벽돌깨기_335ms {
 		 * 1.1) 변경된 벽돌 개수 들고 가기
 		 * 
 		 * 2. 선택한 행에 0밖에 없다면 바로 Continue 
-		 * 
 		 * 
 		 */
 		
@@ -94,7 +93,7 @@ public class Solution_SWEA_5656_벽돌깨기_335ms {
 			deleteArr(newMap, i);
 			// 3. 벽돌 내리기 
 			moveBrick(newMap);
-			// 4. 다음 조합
+			// 4. 다음 선택
 			go(cnt+1, newMap);
 			// 5. 배열 복구
 			newMap = clone;
@@ -127,7 +126,7 @@ public class Solution_SWEA_5656_벽돌깨기_335ms {
 
 
 	private static void deleteArr(int[][] newMap, int selected) {
-		// 배열 연쇄하면서 갱신
+		// BFS용 큐
 		Queue<Node> q = new LinkedList<>();
 		// 첫번째로 처리할 좌표 추가
 		for(int i=0; i<H; i++) {
