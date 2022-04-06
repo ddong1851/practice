@@ -1,4 +1,4 @@
-package src.boj.dp;
+package src.boj.floyd;
 
 import java.io.*;
 import java.util.*;
