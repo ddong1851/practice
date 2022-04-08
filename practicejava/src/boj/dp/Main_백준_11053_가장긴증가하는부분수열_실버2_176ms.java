@@ -7,6 +7,11 @@ public class Main_백준_11053_가장긴증가하는부분수열_실버2_176ms {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * 수업 떄 배운 LIS 적용하면 된다...
+		 */
+		
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int [] arr = new int[n];
