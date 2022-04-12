@@ -63,7 +63,6 @@ public class Main_백준_1629_곱셈_실버1_124ms {
 		if(B==1) {
 			return A%C;
 		}
-		
 		// 이렇게 2배씩 줄이면서 연산해야 연산 횟수가 O(n)에서 O(logN)까지 줄어든다..
 		long remainder = mod(A,B/2,C);
 		// B%2==1 일 때 A를 더 곱하는것으로 바꾸는게 좋을 것 같다.

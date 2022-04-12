@@ -13,6 +13,10 @@ public class Main_백준_1708_블록껍질_플레5_1076ms {
 			this.x = x;
 			this.y = y;
 		}
+		@Override
+		public String toString() {
+			return "Point [x=" + x + ", y=" + y + "]";
+		}
 	} // end of Point 
 	
 	private static class clockSort implements Comparator<Point>{
@@ -96,5 +100,6 @@ public class Main_백준_1708_블록껍질_플레5_1076ms {
 			hull.push(b);
 		} // end of for 
 		System.out.println(hull.size());
+		while(!hull.isEmpty()) System.out.println(hull.pop());
 	} // end of main 
 } // end of class 
