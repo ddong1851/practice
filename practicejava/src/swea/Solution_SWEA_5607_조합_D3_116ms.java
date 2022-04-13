@@ -8,7 +8,6 @@ public class Solution_SWEA_5607_а╤гу_D3_116ms {
 
 	private static int N, R;
 	private static final int P = 1_234_567_891;
-//	private static final int P = 1_000_000_007;
 
 	public static void main(String[] args) throws Exception {
 

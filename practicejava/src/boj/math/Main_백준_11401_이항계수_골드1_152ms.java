@@ -26,8 +26,10 @@ public class Main_백준_11401_이항계수_골드1_152ms {
 		x = x % P;
 		long y = P-2;
 		while(y>0) {
+			// 지수배로 증가하니까 이렇게 곱하는 듯 한다. 홀수일 땐 넣고 
 			if(y%2==1) res = (res * x) % P;
 			y = y >> 1;
+			// 짝수일 땐 증가만 
 			x = (x*x)%P;
 		}
 		return res;

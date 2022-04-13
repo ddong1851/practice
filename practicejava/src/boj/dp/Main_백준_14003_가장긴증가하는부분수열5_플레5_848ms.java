@@ -50,6 +50,8 @@ public class Main_백준_14003_가장긴증가하는부분수열5_플레5_848ms {
 		while(!stack.isEmpty()) {
 			sb.append(stack.pop()).append(" ");
 		}
+		sb.append("\n");
+		sb.append(Arrays.toString(LIS)).append("\n").append(Arrays.toString(path));
 		System.out.println(sb.toString());
 	} // end of main
 	
