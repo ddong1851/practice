@@ -1,4 +1,4 @@
-package src.boj.bfs_dfs;
+package src.boj.floyd;
 
 import java.io.*;
 import java.util.*;
