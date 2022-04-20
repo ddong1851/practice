@@ -45,7 +45,7 @@ public class Main_πÈ¡ÿ_16985_Maaaaaaaaaze_∞ÒµÂ3_792ms {
 		} // end of for 
 		
 		int[] order = new int[5];
-		Arrays.fill(order, -1);
+//		Arrays.fill(order, -1);
 		makePerm(0, order, new boolean[5]);
 		
 		System.out.println(min==999_999_999?-1:min);
