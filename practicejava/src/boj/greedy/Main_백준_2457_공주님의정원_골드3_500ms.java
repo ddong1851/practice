@@ -47,19 +47,25 @@ public class Main_백준_2457_공주님의정원_골드3_500ms {
 	public static void main(String[] args) throws Exception {
 
 		/*
-		 * 1. 공주가 좋아하는 게절인 3월 1일부터 11월 30일까지 매일 꽃이 한 가지 이상 피어있어야 한다. 2. 정원에 심는 꽃의 종류가
-		 * 최소가 되어야 한다.
+		 * 1. 공주가 좋아하는 게절인 3월 1일부터 11월 30일까지 매일 꽃이 한 가지 이상 피어있어야 한다. 
+		 * 2. 정원에 심는 꽃의 종류가 최소가 되어야 한다.
 		 * 
-		 * IDEA 1. 날짜 처리를 어덯게 할까 월 데이터를 다 일수 데이터로 변환? 좀 어렵다.. 2. Date 클래스를 사용해볼까
+		 * IDEA 1. 날짜 처리를 어덯게 할까 월 데이터를 다 일수 데이터로 변환? 좀 어렵다.. 2. Date 클래스를 사용해볼까 X 클래스
+		 * 구현하자
 		 * 
-		 * 짜피 그리디니까 정렬을 해야 함... 어떤 기준으로 정렬할까 끝나는 시점으로 내림차순
+		 * 짜피 그리디니까 정렬을 해야 함... 어떤 기준으로 정렬할까 일찍 시작하는 좌표 기준, 동일한 시작 좌표면 가장 늦게 끝나는게 앞으로
 		 * 
 		 * 1. 데이터 타입을 정의하자. 1.1 날짜 비교를 위한 Date 클래스 1.2 꽃의 수명을 담고 있는 Flower 클래스
 		 * 
-		 * 정렬 후 이전 꽃의 끝나는 날짜가 다음 꽃의 시작 날짜와 겹치지 않는다면 + 이때 공주님이 원하는 조건 1번을 만족하지 않는다면 종료 (
-		 * 실패 )
+		 * 정렬 후 이전 꽃의 끝나는 날짜가 다음 꽃의 시작 날짜와 겹치지 않는다면 + 이때 공주님이 원하는 조건 1번을 만족하지 않는다면 종료 ( 실패 ) 
 		 * 
-		 * 틀렸을 때, 종료일에 지는 것!!!
+		 * 1.1 3월 1일 이전 꽃들 중 가장 긴거를 먼저 선택
+		 * 1.2 만약 처음 심은 꽃으로 11월 30일 이후까지 심을 수 있다면 종료
+		 * 
+		 * 2. 다른 꽃들 심기 ( 먼저 심은 꽃의 끝나는 시점 이전에 심는 꽃 탐색 )
+		 * 2.1 가장 지는 시기가 늦은 꽃 선택
+		 * 2.2 꽃 선택에 실패했다면 종료 ( 실패 )
+		 * 3. 꽃 선택에 성공했다면 심고 다음 탐색.. 
 		 */
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -94,9 +100,8 @@ public class Main_백준_2457_공주님의정원_골드3_500ms {
 		boolean flag = false;
 		// 1. start 꽃 찾기
 		while (!flowers.isEmpty()) {
-			if (flowers.peek().start.compareTo(start) > 0) {
-				break;
-			}
+			// 큐 맨 앞에 있는 꽃의 시작일이 3월 1일보다 늦는다면 종료
+			if (flowers.peek().start.compareTo(start) > 0) break;
 			// 처음으로 심을 꽃 선택 ( 더 오래 가는 꽃을 선택 )
 			temp = flowers.poll();
 			if (temp.end.compareTo(curr.end) > 0) {
@@ -104,8 +109,7 @@ public class Main_백준_2457_공주님의정원_골드3_500ms {
 				flag = true;
 			}
 		}
-		if (!flag)
-			System.out.println(0);
+		if (!flag) System.out.println(0);
 		else {
 			// 하나 심은 것으로 간주
 			int cnt = 1;
@@ -124,7 +128,7 @@ public class Main_백준_2457_공주님의정원_골드3_500ms {
 							if (update.end.compareTo(temp.end) < 0) {
 								update = temp;
 							}
-							// 찾았다는 의미의 flag 
+							// 찾았다는 의미의 flag
 							flag = true;
 						}
 					}
@@ -137,10 +141,9 @@ public class Main_백준_2457_공주님의정원_골드3_500ms {
 					if (curr.end.compareTo(end) > 0) break;
 					flag = false;
 				} // end of while view flowers
-				// 꽃 심기에 실패하지 않았다면 cnt : 0
+					// 꽃 심기에 실패하지 않았다면 cnt : 0
 				System.out.println(flag ? cnt : 0);
 			}
 		}
 	} // end of main
 } // end of class
-
