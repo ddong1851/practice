@@ -8,32 +8,9 @@ import java.io.OutputStreamWriter;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-//class Node{
-//   int row;
-//   int col;
-//   public Node(int row, int col) {
-//      super();
-//      this.row = row;
-//      this.col = col;
-//   }
-//   public int getRow() {
-//      return row;
-//   }
-//   public int getCol() {
-//      return col;
-//   }
-//} // end of Node 
 
 
-/** Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms*/
-// DFS¸¦ ÀÌ¿ëÇÑ Ç®ÀÌ, ½Ã°£ Á¦ÇÑ 1ÃÊ, Àû·Ï»ö¾àÀÎ »ç¶÷°ú ¾Æ´Ñ »ç¶÷ÀÌ ºÃÀ» ¶§ ±¸¿ªÀÇ ¼ö¸¦ ±¸ÇÑ´Ù
-// (1 ¡Â N ¡Â 100)
-public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
-   /*
-    * ¸ñÀû
-    * NxN Å×ÀÌºí¿¡ R G B·Î ÀÌ·ç¾îÁø ¿µ¿ªµéÀÌ ÀÖ´Âµ¥
-    * ÇØ´ç ±¸¿ªÀÇ °³¼ö¸¦ »ö¾à ¾ø´Â »ç¶÷°ú ÀÖ´Â »ç¶÷ÀÇ ±âÁØ¿¡¼­ ±¸ÇÑ´Ù
-    */
+public class Main_ë°±ì¤€_10026_ì ë¡ìƒ‰ì•½_ê³¨ë“œ5_204ms {
    
    static char[][] graph;
    static boolean [][] visited;
@@ -56,38 +33,38 @@ public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
       }
       boolean color = false;
       
-      // »ö¾àÀÌ ¾Æ´Ñ »ç¶÷
+      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½
       for(int i=0; i<2; i++) {
-         // ¹æ¹® ¿©ºÎ ÃÊ±âÈ­ 
+         // ï¿½æ¹® ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ 
          visited = new boolean[N][N];
          int count=0;
-         // ¸ğµç ÁÂÇ¥¿¡ ´ëÇØ Å½»ö
+         // ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
          for(int j=0; j<N; j++) {
             for(int k=0; k<N; k++) {
-               // ÁÂÇ¥º° Å½»ö ÈÄ ¿µ¿ªÀÇ °³¼ö¸¦ count¿¡ Ãß°¡ÇÑ´Ù
+               // ï¿½ï¿½Ç¥ï¿½ï¿½ Å½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ countï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ñ´ï¿½
                count+=BFS(color, new Node(j, k));
             }
          } // end of for 
          color = true;
-         // °³¼ö¸¦ Ãâ·Â ¹öÆÛ¿¡ Ãß°¡
+         // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¿ï¿½ ï¿½ß°ï¿½
          bw.write(count+" ");
       } // end of for
       
-      // ¹öÆÛ¸¦ ºñ¿ì¸é¼­ Ãâ·Â
+      // ï¿½ï¿½ï¿½Û¸ï¿½ ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½
       br.close();
       bw.close();
    } // end of main
 
-   // BFS¸¦ ÅëÇÑ ¾ÈÀü ±¸¿ª °³¼ö ¹İÈ¯
+   // BFSï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
    private static int BFS(boolean color, Node node) {
       Stack<Node> stack = new Stack<>();
       
-      // ÀÌ¹Ì ¹æ¹®ÇÑ ÁÂÇ¥¶ó¸é 0À» ¹İÈ¯ÇÏ°í ¸Ş¼­µå¿¡¼­ ³ª°£´Ù
+      // ï¿½Ì¹ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï°ï¿½ ï¿½Ş¼ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       if(visited[node.getRow()][node.getCol()]==true) {
          return 0;
       }
       
-      // ¹æ¹®ÇÏÁö ¾ÊÀº ÁöÁ¡ÀÌ¶ó¸é ÇØ´ç ÁÂÇ¥¸¦ stack¿¡ Ãß°¡ ÈÄ ¹æ¹® Ã³¸®
+      // ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ stackï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ ï¿½æ¹® Ã³ï¿½ï¿½
       stack.add(node);
       visited[node.getRow()][node.getCol()] = true;
       
@@ -97,14 +74,14 @@ public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
 		int c = n.getCol();
 		char rgb = graph[r][c];
 		int[][] dxy = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
-		// 4¹æ Å½»ö
+		// 4ï¿½ï¿½ Å½ï¿½ï¿½
 		for (int i = 0; i < 4; i++) {
 			int nr = r + dxy[i][0];
 			int nc = c + dxy[i][1];
 			if (nr < 0 || nr >= N || nc < 0 || nc >= N) {
 				continue;
 			}
-			// »ö¾àÀÎ °æ¿ì
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			if (!color) {
 				if (graph[nr][nc] != rgb) {
 					continue;
@@ -114,9 +91,9 @@ public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
 					visited[nr][nc] = true;
 				}
 			} // end of if(!color)
-				// »ö¾àÀÌ ¾Æ´Ñ °æ¿ì
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½
 			if (color) {
-				// R G ÀÎ °æ¿ì
+				// R G ï¿½ï¿½ ï¿½ï¿½ï¿½
 //           	   if(rgb=='R' || rgb=='G') 
 				if (rgb != 'B') {
 					if (graph[nr][nc] == 'B') {
@@ -127,7 +104,7 @@ public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
 						visited[nr][nc] = true;
 					}
 					}
-				// B ÀÎ °æ¿ì
+				// B ï¿½ï¿½ ï¿½ï¿½ï¿½
 				else {
 					if (graph[nr][nc] != 'B') {
 						continue;
@@ -138,10 +115,10 @@ public class Main_¹éÁØ_10026_Àû·Ï»ö¾à_°ñµå5_204ms {
 					}
 				}
 			} // end of if(color)
-		} // end of for(4¹æ)
+		} // end of for(4ï¿½ï¿½)
       } // end of while
       
-      // Å½»öÀ» ÅëÇØ 1À» ¹İÈ¯ÇÏ¿© ¾ÈÀü±¸¿ªÀÇ °³¼ö ++
+      // Å½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ++
       return 1;
    } // end of BFS
 } // end of class
