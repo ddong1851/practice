@@ -3,7 +3,7 @@ package src.boj.dp;
 import java.io.*;
 import java.util.*;
 
-public class Main_น้มุ_14501_ล๐ป็_ฝวน๖3_76ms {
+public class Main_น้มุ_14501_15486_ล๐ป็_ล๐ป็2_ฝวน๖3_1_76ms {
 	
 	public static void main(String[] args) throws Exception {
 		
