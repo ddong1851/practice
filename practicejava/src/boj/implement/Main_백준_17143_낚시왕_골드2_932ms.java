@@ -1,9 +1,9 @@
-package src.boj;
+package src.boj.implement;
 
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_백준_17143_낚시왕_골드2_932ms {
 	
 	private static class Shark implements Comparable<Shark>{
 		int r, c, speed, direction, size;
@@ -51,33 +51,40 @@ public class Main {
 		int M = Integer.parseInt(st.nextToken());
 		
 		boolean[] isShark = new boolean[C];
+		// 상어가 큰거 부터 확인
 		PriorityQueue<Shark> sharks = new PriorityQueue<>();
 		Queue<Shark> list = new LinkedList<>();
 		
 		int r, c, speed, direction, size;
 		int[][] map = new int[R][C];
+		R--;
+		C--;
+		
 		for(int i=0; i<M; i++) {
 			st = new StringTokenizer(br.readLine());
 			r = Integer.parseInt(st.nextToken())-1;
 			c = Integer.parseInt(st.nextToken())-1;
 			speed = Integer.parseInt(st.nextToken());
 			direction = Integer.parseInt(st.nextToken())-1;
+			if(direction<2) {
+				speed = speed%(R*2);
+			} else {
+				speed = speed%(C*2);
+			}
 			size = Integer.parseInt(st.nextToken());
 			isShark[c] = true;
 			sharks.offer(new Shark(r, c, speed, direction, size));
 			map[r][c] = size;
 		}
 		
-		R--;
-		C--;
 		int total = 0;
 		int caught = 0;
 		int next = 0;
-		int[] mult = {-1, 1, 1, -1};
+		int[] add = {-1, 1, 1, -1};
 		
 		// 낚시꾼 이동 
 		for(int i=0; i<=C; i++) {
-			// 1. 물고기를 잡는다.
+			// 1. 상어를 잡는다.
 			if(isShark[i]) {
 				for(int row=0; row<=R; row++) {
 					if(map[row][i]!=0) {
@@ -105,46 +112,40 @@ public class Main {
 					speed = curr.speed;
 					size = curr.size;
 					// 상 하 우 좌
-					if(direction/2==0) { 	// 상하
-						next = r+speed*mult[direction];
-						// 범위를 벗어난다면
-						if(next<0 || next>R) {
-							// 방향 변경 잘해야함.. 요기 체크
-							if((next/R)%2==0) {
-								if(direction==0) direction=1;
-								else direction = 0;
+					if(direction<2) {
+						// 이렇게 한칸마다 안하고, 연산해서 하려했는데, 잘 안되어서.. 참고했습니다.
+						for(int s=0; s<speed; s++) {
+							next = r + add[direction];
+							if(next<0 || next>R) {
+								direction = (direction-1)*-1;
+								next = r + add[direction];
 							}
-							// 바뀐 방향으로 나머지만큼 이동
-							next %= R;
-							next = Math.abs(next);
-							if(mult[direction]<0) next = R-next;
+							r = next;
 						}
-						if(map[next][c]==0) {
-							list.offer(new Shark(next, c, speed, direction, size));
-							map[next][c] = size;
+						if(map[r][c]==0) {
+							map[r][c] = size;
 							isShark[c] = true;
+							list.add(new Shark(r, c, speed, direction, size));
 						}
-					} // end of 상하
-					else {					// 우좌
-						next = c+speed*mult[direction];
-						if(next<0 || next>C) {
-							if((next/C)%2==0) {
+					} else {
+						for(int s=0; s<speed; s++) {
+							next = c + add[direction];
+							if(next<0 || next>C) {
 								if(direction==2) direction=3;
 								else direction=2;
+								next = c + add[direction];
 							}
-							next %= C;
-							next = Math.abs(next);
-							if(mult[direction]<0) next = C-next;
+							c = next;
 						}
-						if(map[r][next]==0) {
-							list.offer(new Shark(r, next, speed, direction, size));
-							map[r][next] = size;
-							isShark[next] = true;
+						if(map[r][c]==0) {
+							map[r][c] = size;
+							isShark[c] = true;
+							list.add(new Shark(r, c, speed, direction, size));
 						}
-					} // end of 우좌
+					}
 				} // end of if not caught
+				
 			} // end of for shark moving 
-			
 			// sharks 큐로 이동
 			while(!list.isEmpty()) sharks.offer(list.poll());
 			
