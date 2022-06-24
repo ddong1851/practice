@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 import java.util.*;
 
@@ -7,6 +7,7 @@ public class Solution_k진수에서소수개수구하기 {
 	public static void main(String[] args) {
 		int n = 1000000;
 		int k = 2;
+		System.out.println(Integer.toString(n, k));
 		System.out.println(solution(n, k));
 	}
 	

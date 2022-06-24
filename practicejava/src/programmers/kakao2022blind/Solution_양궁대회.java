@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 import java.util.*;
 
@@ -76,7 +76,7 @@ public class Solution_양궁대회 {
 	// 리스트의 끝자리, 즉 낮은 점수부터 비교
 	private static boolean hasLower(int[] score) {
 		boolean res = false;
-		for (int i = 10; i > 0; i--) {
+		for (int i = 10; i >= 0; i--) {
 			// 두 리스트의 값이 다를 때
 			if (score[i] != my_best[i]) {
 				if (score[i] > my_best[i])

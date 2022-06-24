@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 public class Solution_파괴되지않은건물 {
 	

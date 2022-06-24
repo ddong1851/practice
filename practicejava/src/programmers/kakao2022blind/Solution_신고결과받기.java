@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 import java.util.*;
 
@@ -52,6 +52,6 @@ public class Solution_신고결과받기 {
 		int k = 2;
 		
 		int[] ans = solution(id_list, report, k);
-		for(int a:ans) System.out.print(a);
+		System.out.println(Arrays.toString(ans));
 	}
 }

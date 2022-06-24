@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 import java.util.*;
 
@@ -80,7 +80,9 @@ public class Solution_주차요금계산 {
 		// 기본 시간을 벗어났다면
 		else {
 			// 기본 요금 + 추가 요금
-			return fees[1]+fees[3]*(int)Math.ceil(time/(fees[2]*1.0));
+			int mult = time/fees[2];
+			if(time%fees[2]!=0) mult++;
+			return fees[1]+fees[3]*mult;
 		}
 	}
 

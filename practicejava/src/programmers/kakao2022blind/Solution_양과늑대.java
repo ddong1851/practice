@@ -1,4 +1,4 @@
-package src.programmers.kakao2022;
+package src.programmers.kakao2022blind;
 
 import java.util.*;
 
@@ -15,6 +15,10 @@ public class Solution_양과늑대 {
 		 * node를 만들고, 트리를 통으로 탐색하는 방법을 어떻게 해야하나.. 고민하다가 실패해서
 		 * 참고해보니, 방문 가능한 노드를 추가하는 방식으로 구현하더라구요
 		 * 
+		 * Node {
+		 * Node parent 
+		 * List <Node> child
+		 * }
 		 */
 		
         int len = info.length;
@@ -30,7 +34,7 @@ public class Solution_양과늑대 {
         
         List<Integer> list = new ArrayList<>();
         list.add(0);
-        go(0, 0, 0, list); // (pointer, sheep, wolf, nextnode)
+        go(0, 0, 0, list); // (pointer, sheep, wolf, nextnode) vis[]
         
         return max;
     }
@@ -49,10 +53,8 @@ public class Solution_양과늑대 {
 		// 다음 노드 방문
 		List<Integer> list = new ArrayList<>();
 		list.addAll(next);
-		
 		// 현재 위치의 포인터는 제거
 		list.remove(Integer.valueOf(pointer));
-		
 		// 자녀 노드 추가
 		for(int nxt: nodes.get(pointer)) {
 			list.add(nxt);
