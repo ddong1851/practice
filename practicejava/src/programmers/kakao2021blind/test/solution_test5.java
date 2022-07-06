@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import src.programmers.kakao2021blind.Solution;
+import src.programmers.kakao2021blind.Solution_카드짝맞추기;
 
 class solution_test5 {
 	
-	Solution solution = new Solution();
+	Solution_카드짝맞추기 solution = new Solution_카드짝맞추기();
 
 	@Test
 	void test() {
